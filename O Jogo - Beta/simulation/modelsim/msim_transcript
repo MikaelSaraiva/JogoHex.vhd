@@ -1,0 +1,1129 @@
+# do Jogo_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying /home/pet/intelFPGA_lite/17.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/muxRom.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:03 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/muxRom.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity muxRom
+# -- Compiling architecture circuitoMuxRom of muxRom
+# End time: 21:21:03 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/mux.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:03 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux
+# -- Compiling architecture circuitoMuxVeloc of mux
+# End time: 21:21:03 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/ROM.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:03 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ROM
+# -- Compiling architecture arqROM of ROM
+# End time: 21:21:03 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/ButtonSync.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:03 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/ButtonSync.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ButtonSync
+# -- Compiling architecture ButtonSyncImpl of ButtonSync
+# End time: 21:21:03 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:03 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Datapath
+# -- Compiling architecture arqdtp of Datapath
+# End time: 21:21:03 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:03 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Controle
+# -- Compiling architecture fsm1arq of Controle
+# End time: 21:21:03 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/deslocaE.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:03 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/deslocaE.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity deslocaE
+# -- Compiling architecture circuitoDeslocaE of deslocaE
+# End time: 21:21:03 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:03 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity velocidade
+# -- Compiling architecture arqVelocidade of velocidade
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/comparador.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/comparador.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity comparador
+# -- Compiling architecture arqComparador of comparador
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/decod7seg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decod7seg
+# -- Compiling architecture arqDecod of decod7seg
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/ROM1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ROM1
+# -- Compiling architecture arqROM1 of ROM1
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/ROM2.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ROM2
+# -- Compiling architecture arqROM2 of ROM2
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/ROM3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ROM3
+# -- Compiling architecture arqROM3 of ROM3
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity contador
+# -- Compiling architecture arqContador of contador
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/contadorRom.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/contadorRom.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity contadorRom
+# -- Compiling architecture arqContadorRom of contadorRom
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity velocidade1
+# -- Compiling architecture arqVelocidade of velocidade1
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade2.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity velocidade2
+# -- Compiling architecture arqVelocidade of velocidade2
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity velocidade3
+# -- Compiling architecture arqVelocidade of velocidade3
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity multiplicador
+# -- Compiling architecture arqMultiplicador of multiplicador
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segResult.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segResult.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decod7segResult
+# -- Compiling architecture arqDecodResult of decod7segResult
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segLEDR.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segLEDR.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decod7segLEDR
+# -- Compiling architecture arqDecodLEDR of decod7segLEDR
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segJogo.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segJogo.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decod7segJogo
+# -- Compiling architecture arqDecodJogo of decod7segJogo
+# End time: 21:21:04 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:21:04 on Nov 23,2017
+# vcom -reportprogress 300 -93 -work work /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity TopoJogo
+# -- Compiling architecture arqTopoJogo of TopoJogo
+# End time: 21:21:05 on Nov 23,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:10 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:11 on Nov 23,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:13 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:13 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo(arqtopojogo)
+# vsim work.topojogo(arqtopojogo) 
+# Start time: 21:21:16 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:16 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:23 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:23 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo(arqtopojogo)
+# vsim work.topojogo(arqtopojogo) 
+# Start time: 21:21:36 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.topojogo(arqtopojogo)
+# End time: 21:21:36 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# vsim work.topojogo(arqtopojogo) 
+# Start time: 21:21:36 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:36 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo(arqtopojogo)
+# vsim work.topojogo(arqtopojogo) 
+# Start time: 21:21:36 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:37 on Nov 23,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:37 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:37 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:37 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:37 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:37 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:37 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:37 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:38 on Nov 23,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:38 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:38 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:38 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:38 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:38 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.topojogo
+# End time: 21:21:38 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# vsim work.topojogo 
+# Start time: 21:21:38 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:38 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:38 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:38 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:39 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:39 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.topojogo
+# vsim work.topojogo 
+# Start time: 21:21:39 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:21:39 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.comparador
+# vsim work.comparador 
+# Start time: 21:21:47 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.comparador(arqcomparador)
+vsim work.topojogo
+# End time: 21:22:05 on Nov 23,2017, Elapsed time: 0:00:18
+# Errors: 0, Warnings: 0
+# vsim work.topojogo 
+# Start time: 21:22:05 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.topojogo(arqtopojogo)
+# Loading work.buttonsync(buttonsyncimpl)
+# Loading work.controle(fsm1arq)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:22:06 on Nov 23,2017, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.datapath
+# vsim work.datapath 
+# Start time: 21:22:33 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /datapath/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:22:33 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.datapath
+# vsim work.datapath 
+# Start time: 21:22:35 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.velocidade(arqvelocidade)
+# Loading work.velocidade1(arqvelocidade)
+# Loading work.velocidade2(arqvelocidade)
+# Loading work.velocidade3(arqvelocidade)
+# Loading work.mux(circuitomuxveloc)
+# Loading work.decod7seg(arqdecod)
+# Loading work.contadorrom(arqcontadorrom)
+# Loading work.rom(arqrom)
+# Loading work.rom1(arqrom1)
+# Loading work.rom2(arqrom2)
+# Loading work.rom3(arqrom3)
+# Loading work.muxrom(circuitomuxrom)
+# Loading work.decod7segjogo(arqdecodjogo)
+# Loading work.comparador(arqcomparador)
+# Loading work.contador(arqcontador)
+# Loading work.decod7segledr(arqdecodledr)
+# Loading work.deslocae(circuitodeslocae)
+# Loading work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /datapath/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:22:35 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim rtl_work.topojogo
+# vsim rtl_work.topojogo 
+# Start time: 21:22:52 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading rtl_work.topojogo(arqtopojogo)
+# Loading rtl_work.buttonsync(buttonsyncimpl)
+# Loading rtl_work.controle(fsm1arq)
+# Loading rtl_work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading rtl_work.velocidade(arqvelocidade)
+# Loading rtl_work.velocidade1(arqvelocidade)
+# Loading rtl_work.velocidade2(arqvelocidade)
+# Loading rtl_work.velocidade3(arqvelocidade)
+# Loading rtl_work.mux(circuitomuxveloc)
+# Loading rtl_work.decod7seg(arqdecod)
+# Loading rtl_work.contadorrom(arqcontadorrom)
+# Loading rtl_work.rom(arqrom)
+# Loading rtl_work.rom1(arqrom1)
+# Loading rtl_work.rom2(arqrom2)
+# Loading rtl_work.rom3(arqrom3)
+# Loading rtl_work.muxrom(circuitomuxrom)
+# Loading rtl_work.decod7segjogo(arqdecodjogo)
+# Loading rtl_work.comparador(arqcomparador)
+# Loading rtl_work.contador(arqcontador)
+# Loading rtl_work.decod7segledr(arqdecodledr)
+# Loading rtl_work.deslocae(circuitodeslocae)
+# Loading rtl_work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:22:52 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim rtl_work.topojogo
+# vsim rtl_work.topojogo 
+# Start time: 21:22:53 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading rtl_work.topojogo(arqtopojogo)
+# Loading rtl_work.buttonsync(buttonsyncimpl)
+# Loading rtl_work.controle(fsm1arq)
+# Loading rtl_work.datapath(arqdtp)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading rtl_work.velocidade(arqvelocidade)
+# Loading rtl_work.velocidade1(arqvelocidade)
+# Loading rtl_work.velocidade2(arqvelocidade)
+# Loading rtl_work.velocidade3(arqvelocidade)
+# Loading rtl_work.mux(circuitomuxveloc)
+# Loading rtl_work.decod7seg(arqdecod)
+# Loading rtl_work.contadorrom(arqcontadorrom)
+# Loading rtl_work.rom(arqrom)
+# Loading rtl_work.rom1(arqrom1)
+# Loading rtl_work.rom2(arqrom2)
+# Loading rtl_work.rom3(arqrom3)
+# Loading rtl_work.muxrom(circuitomuxrom)
+# Loading rtl_work.decod7segjogo(arqdecodjogo)
+# Loading rtl_work.comparador(arqcomparador)
+# Loading rtl_work.contador(arqcontador)
+# Loading rtl_work.decod7segledr(arqdecodledr)
+# Loading rtl_work.deslocae(circuitodeslocae)
+# Loading rtl_work.multiplicador(arqmultiplicador)
+# ** Fatal: (vsim-3807) Types do not match between component and entity for port "inputCont".
+#    Time: 0 ps  Iteration: 0  Instance: /topojogo/dt/multiScore File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 6
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 21:22:53 on Nov 23,2017, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vsim work.controle
+# vsim work.controle 
+# Start time: 21:23:07 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.controle(fsm1arq)
+vsim work.controle
+# End time: 21:23:09 on Nov 23,2017, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim work.controle 
+# Start time: 21:23:09 on Nov 23,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.controle(fsm1arq)
+# End time: 21:23:42 on Nov 23,2017, Elapsed time: 0:00:33
+# Errors: 0, Warnings: 0

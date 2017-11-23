@@ -1,0 +1,213 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'Controle:ctrl|S[0]'
+Slack : -7.711
+TNS   : -37.704
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -2.852
+TNS   : -7.982
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.324
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'Controle:ctrl|S[0]'
+Slack : 1.282
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'Controle:ctrl|S[0]'
+Slack : -3.888
+TNS   : -13.828
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -0.131
+TNS   : -0.483
+
+Type  : Slow 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.607
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'Controle:ctrl|S[0]'
+Slack : 2.256
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -4.201
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Controle:ctrl|S[0]'
+Slack : 0.318
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S0'
+Slack : 0.348
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S2'
+Slack : 0.444
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S1'
+Slack : 0.459
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'Controle:ctrl|S[0]'
+Slack : -7.516
+TNS   : -37.296
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -2.508
+TNS   : -6.884
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.007
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'Controle:ctrl|S[0]'
+Slack : 1.206
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'Controle:ctrl|S[0]'
+Slack : -3.960
+TNS   : -14.271
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -0.093
+TNS   : -0.336
+
+Type  : Slow 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.568
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'Controle:ctrl|S[0]'
+Slack : 2.291
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -4.508
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Controle:ctrl|S[0]'
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S0'
+Slack : 0.369
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S2'
+Slack : 0.442
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S1'
+Slack : 0.451
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'Controle:ctrl|S[0]'
+Slack : -4.327
+TNS   : -19.583
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -2.343
+TNS   : -6.620
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.192
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'Controle:ctrl|S[0]'
+Slack : 0.876
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'Controle:ctrl|S[0]'
+Slack : -1.645
+TNS   : -5.636
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : 0.361
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'CLOCK_50'
+Slack : 0.332
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'Controle:ctrl|S[0]'
+Slack : 1.263
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.084
+TNS   : -0.649
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Controle:ctrl|S[0]'
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S2'
+Slack : 0.427
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S0'
+Slack : 0.442
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S1'
+Slack : 0.496
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'Controle:ctrl|S[0]'
+Slack : -3.873
+TNS   : -17.501
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -1.811
+TNS   : -5.027
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.170
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'Controle:ctrl|S[0]'
+Slack : 0.767
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'Controle:ctrl|S[0]'
+Slack : -1.571
+TNS   : -5.452
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : 0.400
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'CLOCK_50'
+Slack : 0.300
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'Controle:ctrl|S[0]'
+Slack : 1.249
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.085
+TNS   : -0.670
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Controle:ctrl|S[0]'
+Slack : 0.434
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S2'
+Slack : 0.439
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S0'
+Slack : 0.441
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Controle:ctrl|EAtual.S1'
+Slack : 0.493
+TNS   : 0.000
+
+------------------------------------------------------------

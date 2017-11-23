@@ -1,0 +1,38 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity velocidade is
+port (CLOCK_50: in std_logic;
+	sel: in std_logic_vector(3 downto 0);
+	S: out std_logic_vector(1 downto 0));
+end velocidade;
+	
+architecture arqVelocidade of velocidade is
+signal EAtual, PEstado: STATES;
+signal clk:std_logic;
+signal cont: std_logic_vector(31 downto 0);  
+begin
+	process(CLOCK_50)
+	begin
+			if(rising_edge(CLOCK_50)) then
+				cont <= cont + 1;
+			elsif (cont= x"1DCD64FF") then
+				cont <= x"0000000";
+				clk <= '1';
+				S <= "00";
+			elsif (cont= x"BEBC1FC") then
+				cont <= x"0000000";
+				clk <= '1';
+				S <= "01";
+			elsif (cont= x"8F0D17D") then
+				cont<= x"0000000";
+				clk <= '1';
+				S <= "10";
+			elsif (cont= x"5F5E0FE") then
+				cont<= x"0000000";
+				clk<= '1';
+				S <= "11";
+			end if;
+		end if;
+	end process;
+	
+end arqVelocidade;

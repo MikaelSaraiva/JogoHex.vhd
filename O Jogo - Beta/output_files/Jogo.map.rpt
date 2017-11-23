@@ -1,0 +1,663 @@
+Analysis & Synthesis report for Jogo
+Thu Nov 23 21:17:43 2017
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |TopoJogo|Controle:ctrl|EAtual
+ 10. State Machine - |TopoJogo|ButtonSync:bt|btn3state
+ 11. State Machine - |TopoJogo|ButtonSync:bt|btn2state
+ 12. State Machine - |TopoJogo|ButtonSync:bt|btn1state
+ 13. State Machine - |TopoJogo|ButtonSync:bt|btn0state
+ 14. User-Specified and Inferred Latches
+ 15. Registers Removed During Synthesis
+ 16. Removed Registers Triggering Further Register Optimizations
+ 17. General Register Statistics
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Port Connectivity Checks: "Datapath:dt|multiplicador:multiScore"
+ 20. Port Connectivity Checks: "ButtonSync:bt"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Nov 23 21:17:43 2017       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; Jogo                                        ;
+; Top-level Entity Name           ; TopoJogo                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 8                                           ;
+; Total pins                      ; 67                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 1                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; TopoJogo           ; Jogo               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                     ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; muxRom.vhd                       ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/muxRom.vhd          ;         ;
+; mux.vhd                          ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/mux.vhd             ;         ;
+; ROM.vhd                          ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM.vhd             ;         ;
+; ButtonSync.vhd                   ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/ButtonSync.vhd      ;         ;
+; Datapath.vhd                     ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd        ;         ;
+; Controle.vhd                     ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd        ;         ;
+; deslocaE.vhd                     ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/deslocaE.vhd        ;         ;
+; velocidade.vhd                   ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade.vhd      ;         ;
+; comparador.vhd                   ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/comparador.vhd      ;         ;
+; decod7seg.vhd                    ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7seg.vhd       ;         ;
+; ROM1.vhd                         ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM1.vhd            ;         ;
+; ROM2.vhd                         ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM2.vhd            ;         ;
+; ROM3.vhd                         ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM3.vhd            ;         ;
+; contador.vhd                     ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd        ;         ;
+; contadorRom.vhd                  ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/contadorRom.vhd     ;         ;
+; velocidade1.vhd                  ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade1.vhd     ;         ;
+; velocidade2.vhd                  ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade2.vhd     ;         ;
+; velocidade3.vhd                  ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade3.vhd     ;         ;
+; multiplicador.vhd                ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd   ;         ;
+; decod7segResult.vhd              ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segResult.vhd ;         ;
+; decod7segLEDR.vhd                ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segLEDR.vhd   ;         ;
+; decod7segJogo.vhd                ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segJogo.vhd   ;         ;
+; TopoJogo.vhd                     ; yes             ; User VHDL File  ; /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd        ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                             ;
++---------------------------------------------+-------------------------------------------+
+; Resource                                    ; Usage                                     ;
++---------------------------------------------+-------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 34                                        ;
+;                                             ;                                           ;
+; Combinational ALUT usage for logic          ; 67                                        ;
+;     -- 7 input functions                    ; 0                                         ;
+;     -- 6 input functions                    ; 0                                         ;
+;     -- 5 input functions                    ; 2                                         ;
+;     -- 4 input functions                    ; 25                                        ;
+;     -- <=3 input functions                  ; 40                                        ;
+;                                             ;                                           ;
+; Dedicated logic registers                   ; 8                                         ;
+;                                             ;                                           ;
+; I/O pins                                    ; 67                                        ;
+;                                             ;                                           ;
+; Total DSP Blocks                            ; 1                                         ;
+;                                             ;                                           ;
+; Maximum fan-out node                        ; Datapath:dt|multiplicador:multiScore|S[0] ;
+; Maximum fan-out                             ; 14                                        ;
+; Total fan-out                               ; 301                                       ;
+; Average fan-out                             ; 1.43                                      ;
++---------------------------------------------+-------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                         ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Entity Name     ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------+-----------------+--------------+
+; |TopoJogo                        ; 67 (0)              ; 8 (0)                     ; 0                 ; 1          ; 67   ; 0            ; |TopoJogo                                      ; TopoJogo        ; work         ;
+;    |ButtonSync:bt|               ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|ButtonSync:bt                        ; ButtonSync      ; work         ;
+;    |Controle:ctrl|               ; 15 (15)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Controle:ctrl                        ; Controle        ; work         ;
+;    |Datapath:dt|                 ; 48 (0)              ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |TopoJogo|Datapath:dt                          ; Datapath        ; work         ;
+;       |comparador:muxCOM|        ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Datapath:dt|comparador:muxCOM        ; comparador      ; work         ;
+;       |contador:contPont|        ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Datapath:dt|contador:contPont        ; contador        ; work         ;
+;       |decod7seg:dec7veloc|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Datapath:dt|decod7seg:dec7veloc      ; decod7seg       ; work         ;
+;       |decod7segJogo:muxDEC1|    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Datapath:dt|decod7segJogo:muxDEC1    ; decod7segJogo   ; work         ;
+;       |decod7segJogo:muxDEC2|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Datapath:dt|decod7segJogo:muxDEC2    ; decod7segJogo   ; work         ;
+;       |decod7segLEDR:dec7LEDR|   ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Datapath:dt|decod7segLEDR:dec7LEDR   ; decod7segLEDR   ; work         ;
+;       |decod7segResult:dec71|    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Datapath:dt|decod7segResult:dec71    ; decod7segResult ; work         ;
+;       |decod7segResult:dec72|    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Datapath:dt|decod7segResult:dec72    ; decod7segResult ; work         ;
+;       |deslocaE:deslE|           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Datapath:dt|deslocaE:deslE           ; deslocaE        ; work         ;
+;       |multiplicador:multiScore| ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |TopoJogo|Datapath:dt|multiplicador:multiScore ; multiplicador   ; work         ;
+;       |mux:muxVeloc|             ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Datapath:dt|mux:muxVeloc             ; mux             ; work         ;
+;       |muxRom:morM|              ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopoJogo|Datapath:dt|muxRom:morM              ; muxRom          ; work         ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Independent 9x9                 ; 1           ;
+; Total number of DSP blocks      ; 1           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 1           ;
++---------------------------------+-------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------+
+; State Machine - |TopoJogo|Controle:ctrl|EAtual            ;
++-----------+-----------+-----------+-----------+-----------+
+; Name      ; EAtual.S3 ; EAtual.S2 ; EAtual.S1 ; EAtual.S0 ;
++-----------+-----------+-----------+-----------+-----------+
+; EAtual.S0 ; 0         ; 0         ; 0         ; 0         ;
+; EAtual.S1 ; 0         ; 0         ; 1         ; 1         ;
+; EAtual.S2 ; 0         ; 1         ; 0         ; 1         ;
+; EAtual.S3 ; 1         ; 0         ; 0         ; 1         ;
++-----------+-----------+-----------+-----------+-----------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |TopoJogo|ButtonSync:bt|btn3state                                                 ;
++-------------------------+------------------------+----------------------+-------------------------+
+; Name                    ; btn3state.EsperaSoltar ; btn3state.SaidaAtiva ; btn3state.EsperaApertar ;
++-------------------------+------------------------+----------------------+-------------------------+
+; btn3state.EsperaApertar ; 0                      ; 0                    ; 0                       ;
+; btn3state.SaidaAtiva    ; 0                      ; 1                    ; 1                       ;
+; btn3state.EsperaSoltar  ; 1                      ; 0                    ; 1                       ;
++-------------------------+------------------------+----------------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |TopoJogo|ButtonSync:bt|btn2state                                                 ;
++-------------------------+------------------------+----------------------+-------------------------+
+; Name                    ; btn2state.EsperaSoltar ; btn2state.SaidaAtiva ; btn2state.EsperaApertar ;
++-------------------------+------------------------+----------------------+-------------------------+
+; btn2state.EsperaApertar ; 0                      ; 0                    ; 0                       ;
+; btn2state.SaidaAtiva    ; 0                      ; 1                    ; 1                       ;
+; btn2state.EsperaSoltar  ; 1                      ; 0                    ; 1                       ;
++-------------------------+------------------------+----------------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |TopoJogo|ButtonSync:bt|btn1state                                                 ;
++-------------------------+------------------------+----------------------+-------------------------+
+; Name                    ; btn1state.EsperaSoltar ; btn1state.SaidaAtiva ; btn1state.EsperaApertar ;
++-------------------------+------------------------+----------------------+-------------------------+
+; btn1state.EsperaApertar ; 0                      ; 0                    ; 0                       ;
+; btn1state.SaidaAtiva    ; 0                      ; 1                    ; 1                       ;
+; btn1state.EsperaSoltar  ; 1                      ; 0                    ; 1                       ;
++-------------------------+------------------------+----------------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |TopoJogo|ButtonSync:bt|btn0state                                                 ;
++-------------------------+------------------------+----------------------+-------------------------+
+; Name                    ; btn0state.EsperaSoltar ; btn0state.SaidaAtiva ; btn0state.EsperaApertar ;
++-------------------------+------------------------+----------------------+-------------------------+
+; btn0state.EsperaApertar ; 0                      ; 0                    ; 0                       ;
+; btn0state.SaidaAtiva    ; 0                      ; 1                    ; 1                       ;
+; btn0state.EsperaSoltar  ; 1                      ; 0                    ; 1                       ;
++-------------------------+------------------------+----------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                     ;
++-----------------------------------------------------+------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                      ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------------------+------------------------+
+; Datapath:dt|contador:contPont|cont[0]               ; Datapath:dt|comparador:muxCOM|Equal0     ; yes                    ;
+; Datapath:dt|contador:contPont|cont[1]               ; Datapath:dt|comparador:muxCOM|Equal0     ; yes                    ;
+; Datapath:dt|contador:contPont|cont[2]               ; Datapath:dt|comparador:muxCOM|Equal0     ; yes                    ;
+; Datapath:dt|contador:contPont|cont[3]               ; Datapath:dt|comparador:muxCOM|Equal0     ; yes                    ;
+; Controle:ctrl|S[0]                                  ; Controle:ctrl|S                          ; yes                    ;
+; Controle:ctrl|S[1]                                  ; Controle:ctrl|S                          ; yes                    ;
+; Controle:ctrl|S[8]                                  ; Controle:ctrl|EAtual.S1                  ; yes                    ;
+; Controle:ctrl|S[9]                                  ; Controle:ctrl|EAtual.S1                  ; yes                    ;
+; Datapath:dt|contador:contPont|contAux[0]            ; Datapath:dt|contador:contPont|contAux[1] ; yes                    ;
+; Controle:ctrl|S[2]                                  ; Controle:ctrl|EAtual.S2                  ; yes                    ;
+; Controle:ctrl|S[3]                                  ; Controle:ctrl|EAtual.S2                  ; yes                    ;
+; Controle:ctrl|S[4]                                  ; Controle:ctrl|EAtual.S2                  ; yes                    ;
+; Controle:ctrl|S[5]                                  ; Controle:ctrl|EAtual.S2                  ; yes                    ;
+; Controle:ctrl|S[6]                                  ; Controle:ctrl|EAtual.S2                  ; yes                    ;
+; Controle:ctrl|S[7]                                  ; Controle:ctrl|EAtual.S2                  ; yes                    ;
+; Datapath:dt|contador:contPont|contAux[1]            ; Datapath:dt|contador:contPont|contAux[1] ; yes                    ;
+; Datapath:dt|contador:contPont|contAux[2]            ; Datapath:dt|contador:contPont|contAux[1] ; yes                    ;
+; Datapath:dt|contador:contPont|contAux[3]            ; Datapath:dt|contador:contPont|contAux[1] ; yes                    ;
+; Number of user-specified and inferred latches = 18  ;                                          ;                        ;
++-----------------------------------------------------+------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++---------------------------------------------+--------------------------------------+
+; Register name                               ; Reason for Removal                   ;
++---------------------------------------------+--------------------------------------+
+; Datapath:dt|contadorRom:contR|contAux[0..2] ; Stuck at GND due to stuck port clock ;
+; Datapath:dt|contadorRom:contR|cont[0..3]    ; Stuck at GND due to stuck port clock ;
+; Datapath:dt|contadorRom:contR|contAux[3]    ; Stuck at GND due to stuck port clock ;
+; ButtonSync:bt|btn3state.SaidaAtiva          ; Lost fanout                          ;
+; ButtonSync:bt|btn3state.EsperaSoltar        ; Lost fanout                          ;
+; ButtonSync:bt|btn3state.EsperaApertar       ; Lost fanout                          ;
+; ButtonSync:bt|btn2state.SaidaAtiva          ; Lost fanout                          ;
+; ButtonSync:bt|btn2state.EsperaSoltar        ; Lost fanout                          ;
+; ButtonSync:bt|btn2state.EsperaApertar       ; Lost fanout                          ;
+; ButtonSync:bt|btn1state.EsperaSoltar        ; Lost fanout                          ;
+; ButtonSync:bt|btn0state.EsperaSoltar        ; Lost fanout                          ;
+; Total Number of Removed Registers = 16      ;                                      ;
++---------------------------------------------+--------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                          ;
++------------------------------------------+-------------------------+---------------------------------------------------------------------------------+
+; Register name                            ; Reason for Removal      ; Registers Removed due to This Register                                          ;
++------------------------------------------+-------------------------+---------------------------------------------------------------------------------+
+; Datapath:dt|contadorRom:contR|contAux[0] ; Stuck at GND            ; Datapath:dt|contadorRom:contR|cont[0], Datapath:dt|contadorRom:contR|contAux[3] ;
+;                                          ; due to stuck port clock ;                                                                                 ;
+; Datapath:dt|contadorRom:contR|contAux[2] ; Stuck at GND            ; Datapath:dt|contadorRom:contR|cont[2]                                           ;
+;                                          ; due to stuck port clock ;                                                                                 ;
+; Datapath:dt|contadorRom:contR|contAux[1] ; Stuck at GND            ; Datapath:dt|contadorRom:contR|cont[1]                                           ;
+;                                          ; due to stuck port clock ;                                                                                 ;
+; ButtonSync:bt|btn3state.SaidaAtiva       ; Lost Fanouts            ; ButtonSync:bt|btn3state.EsperaApertar                                           ;
+; ButtonSync:bt|btn2state.SaidaAtiva       ; Lost Fanouts            ; ButtonSync:bt|btn2state.EsperaApertar                                           ;
++------------------------------------------+-------------------------+---------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 8     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopoJogo|Datapath:dt|decod7seg:dec7veloc|F[5]   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopoJogo|Datapath:dt|deslocaE:deslE|S[5]        ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |TopoJogo|Datapath:dt|muxRom:morM|S[0]           ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |TopoJogo|Datapath:dt|decod7segResult:dec71|F[0] ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |TopoJogo|Datapath:dt|decod7segResult:dec72|F[6] ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |TopoJogo|Datapath:dt|decod7segResult:dec71|F[3] ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |TopoJogo|Datapath:dt|decod7segResult:dec72|F[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Datapath:dt|multiplicador:multiScore"                                                   ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; s[11..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ButtonSync:bt"                                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; btn2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; btn3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 8                           ;
+;     CLR               ; 2                           ;
+;     ENA CLR           ; 2                           ;
+;     plain             ; 4                           ;
+; arriav_lcell_comb     ; 76                          ;
+;     normal            ; 76                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 25                          ;
+;         5 data inputs ; 2                           ;
+; arriav_mac            ; 1                           ;
+; boundary_port         ; 67                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.50                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Thu Nov 23 21:17:24 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Jogo -c Jogo
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file muxRom.vhd
+    Info (12022): Found design unit 1: muxRom-circuitoMuxRom File: /home/pet/Desktop/drive-download-20171121T155723Z-001/muxRom.vhd Line: 11
+    Info (12023): Found entity 1: muxRom File: /home/pet/Desktop/drive-download-20171121T155723Z-001/muxRom.vhd Line: 4
+Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus Prime megafunction library File: /home/pet/Desktop/drive-download-20171121T155723Z-001/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mux.vhd
+    Info (12022): Found design unit 1: mux-circuitoMuxVeloc File: /home/pet/Desktop/drive-download-20171121T155723Z-001/mux.vhd Line: 11
+    Info (12023): Found entity 1: mux File: /home/pet/Desktop/drive-download-20171121T155723Z-001/mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ROM.vhd
+    Info (12022): Found design unit 1: ROM-arqROM File: /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM.vhd Line: 9
+    Info (12023): Found entity 1: ROM File: /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ButtonSync.vhd
+    Info (12022): Found design unit 1: ButtonSync-ButtonSyncImpl File: /home/pet/Desktop/drive-download-20171121T155723Z-001/ButtonSync.vhd Line: 15
+    Info (12023): Found entity 1: ButtonSync File: /home/pet/Desktop/drive-download-20171121T155723Z-001/ButtonSync.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file Datapath.vhd
+    Info (12022): Found design unit 1: Datapath-arqdtp File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 21
+    Info (12023): Found entity 1: Datapath File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file Controle.vhd
+    Info (12022): Found design unit 1: Controle-fsm1arq File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 11
+    Info (12023): Found entity 1: Controle File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file deslocaE.vhd
+    Info (12022): Found design unit 1: deslocaE-circuitoDeslocaE File: /home/pet/Desktop/drive-download-20171121T155723Z-001/deslocaE.vhd Line: 9
+    Info (12023): Found entity 1: deslocaE File: /home/pet/Desktop/drive-download-20171121T155723Z-001/deslocaE.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file velocidade.vhd
+    Info (12022): Found design unit 1: velocidade-arqVelocidade File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade.vhd Line: 11
+    Info (12023): Found entity 1: velocidade File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file comparador.vhd
+    Info (12022): Found design unit 1: comparador-arqComparador File: /home/pet/Desktop/drive-download-20171121T155723Z-001/comparador.vhd Line: 9
+    Info (12023): Found entity 1: comparador File: /home/pet/Desktop/drive-download-20171121T155723Z-001/comparador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file registrador.vhd
+    Info (12022): Found design unit 1: registrador-circuitoRegistrador File: /home/pet/Desktop/drive-download-20171121T155723Z-001/registrador.vhd Line: 10
+    Info (12023): Found entity 1: registrador File: /home/pet/Desktop/drive-download-20171121T155723Z-001/registrador.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file decod7seg.vhd
+    Info (12022): Found design unit 1: decod7seg-arqDecod File: /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7seg.vhd Line: 9
+    Info (12023): Found entity 1: decod7seg File: /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7seg.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file ROM1.vhd
+    Info (12022): Found design unit 1: ROM1-arqROM1 File: /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM1.vhd Line: 9
+    Info (12023): Found entity 1: ROM1 File: /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ROM2.vhd
+    Info (12022): Found design unit 1: ROM2-arqROM2 File: /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM2.vhd Line: 9
+    Info (12023): Found entity 1: ROM2 File: /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM2.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ROM3.vhd
+    Info (12022): Found design unit 1: ROM3-arqROM3 File: /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM3.vhd Line: 9
+    Info (12023): Found entity 1: ROM3 File: /home/pet/Desktop/drive-download-20171121T155723Z-001/ROM3.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file contador.vhd
+    Info (12022): Found design unit 1: contador-arqContador File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 11
+    Info (12023): Found entity 1: contador File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file contadorRom.vhd
+    Info (12022): Found design unit 1: contadorRom-arqContadorRom File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contadorRom.vhd Line: 11
+    Info (12023): Found entity 1: contadorRom File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contadorRom.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file velocidade1.vhd
+    Info (12022): Found design unit 1: velocidade1-arqVelocidade File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade1.vhd Line: 11
+    Info (12023): Found entity 1: velocidade1 File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade1.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file velocidade2.vhd
+    Info (12022): Found design unit 1: velocidade2-arqVelocidade File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade2.vhd Line: 11
+    Info (12023): Found entity 1: velocidade2 File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file velocidade3.vhd
+    Info (12022): Found design unit 1: velocidade3-arqVelocidade File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade3.vhd Line: 11
+    Info (12023): Found entity 1: velocidade3 File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade3.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file multiplicador.vhd
+    Info (12022): Found design unit 1: multiplicador-arqMultiplicador File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 12
+    Info (12023): Found entity 1: multiplicador File: /home/pet/Desktop/drive-download-20171121T155723Z-001/multiplicador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file decod7segResult.vhd
+    Info (12022): Found design unit 1: decod7segResult-arqDecodResult File: /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segResult.vhd Line: 9
+    Info (12023): Found entity 1: decod7segResult File: /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segResult.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file decod7segLEDR.vhd
+    Info (12022): Found design unit 1: decod7segLEDR-arqDecodLEDR File: /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segLEDR.vhd Line: 10
+    Info (12023): Found entity 1: decod7segLEDR File: /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segLEDR.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decod7segJogo.vhd
+    Info (12022): Found design unit 1: decod7segJogo-arqDecodJogo File: /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segJogo.vhd Line: 10
+    Info (12023): Found entity 1: decod7segJogo File: /home/pet/Desktop/drive-download-20171121T155723Z-001/decod7segJogo.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file TopoJogo.vhd
+    Info (12022): Found design unit 1: TopoJogo-arqTopoJogo File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 18
+    Info (12023): Found entity 1: TopoJogo File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 4
+Info (12127): Elaborating entity "TopoJogo" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at TopoJogo.vhd(20): object "k2" assigned a value but never read File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 20
+Warning (10036): Verilog HDL or VHDL warning at TopoJogo.vhd(20): object "k3" assigned a value but never read File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 20
+Info (12128): Elaborating entity "ButtonSync" for hierarchy "ButtonSync:bt" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 57
+Info (12128): Elaborating entity "Controle" for hierarchy "Controle:ctrl" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at Controle.vhd(27): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 27
+Warning (10492): VHDL Process Statement warning at Controle.vhd(33): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 33
+Warning (10492): VHDL Process Statement warning at Controle.vhd(34): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 34
+Warning (10492): VHDL Process Statement warning at Controle.vhd(35): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 35
+Warning (10492): VHDL Process Statement warning at Controle.vhd(41): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at Controle.vhd(44): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at Controle.vhd(24): inferring latch(es) for signal or variable "S", which holds its previous value in one or more paths through the process File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 24
+Info (10041): Inferred latch for "S[0]" at Controle.vhd(24) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 24
+Info (10041): Inferred latch for "S[1]" at Controle.vhd(24) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 24
+Info (10041): Inferred latch for "S[2]" at Controle.vhd(24) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 24
+Info (10041): Inferred latch for "S[3]" at Controle.vhd(24) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 24
+Info (10041): Inferred latch for "S[4]" at Controle.vhd(24) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 24
+Info (10041): Inferred latch for "S[5]" at Controle.vhd(24) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 24
+Info (10041): Inferred latch for "S[6]" at Controle.vhd(24) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 24
+Info (10041): Inferred latch for "S[7]" at Controle.vhd(24) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 24
+Info (10041): Inferred latch for "S[8]" at Controle.vhd(24) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 24
+Info (10041): Inferred latch for "S[9]" at Controle.vhd(24) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Controle.vhd Line: 24
+Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:dt" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 59
+Info (12128): Elaborating entity "velocidade" for hierarchy "Datapath:dt|velocidade:velocMux1" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 147
+Warning (10541): VHDL Signal Declaration warning at velocidade.vhd(8): used implicit default value for signal "S" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade.vhd Line: 8
+Warning (10036): Verilog HDL or VHDL warning at velocidade.vhd(12): object "clk" assigned a value but never read File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade.vhd Line: 12
+Info (12128): Elaborating entity "velocidade1" for hierarchy "Datapath:dt|velocidade1:velocMux2" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 148
+Warning (10541): VHDL Signal Declaration warning at velocidade1.vhd(8): used implicit default value for signal "S" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade1.vhd Line: 8
+Warning (10036): Verilog HDL or VHDL warning at velocidade1.vhd(12): object "clk" assigned a value but never read File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade1.vhd Line: 12
+Info (12128): Elaborating entity "velocidade2" for hierarchy "Datapath:dt|velocidade2:velocMux3" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 149
+Warning (10541): VHDL Signal Declaration warning at velocidade2.vhd(8): used implicit default value for signal "S" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade2.vhd Line: 8
+Warning (10036): Verilog HDL or VHDL warning at velocidade2.vhd(12): object "clk" assigned a value but never read File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade2.vhd Line: 12
+Info (12128): Elaborating entity "velocidade3" for hierarchy "Datapath:dt|velocidade3:velocMux4" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 150
+Warning (10541): VHDL Signal Declaration warning at velocidade3.vhd(8): used implicit default value for signal "S" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade3.vhd Line: 8
+Warning (10036): Verilog HDL or VHDL warning at velocidade3.vhd(12): object "clk" assigned a value but never read File: /home/pet/Desktop/drive-download-20171121T155723Z-001/velocidade3.vhd Line: 12
+Info (12128): Elaborating entity "mux" for hierarchy "Datapath:dt|mux:muxVeloc" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 151
+Info (12128): Elaborating entity "decod7seg" for hierarchy "Datapath:dt|decod7seg:dec7veloc" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 152
+Info (12128): Elaborating entity "contadorRom" for hierarchy "Datapath:dt|contadorRom:contR" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 154
+Info (12128): Elaborating entity "ROM" for hierarchy "Datapath:dt|ROM:mor1" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 155
+Info (12128): Elaborating entity "ROM1" for hierarchy "Datapath:dt|ROM1:mor2" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 156
+Info (12128): Elaborating entity "ROM2" for hierarchy "Datapath:dt|ROM2:mor3" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 157
+Info (12128): Elaborating entity "ROM3" for hierarchy "Datapath:dt|ROM3:mor4" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 158
+Info (12128): Elaborating entity "muxRom" for hierarchy "Datapath:dt|muxRom:morM" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 159
+Info (12128): Elaborating entity "decod7segJogo" for hierarchy "Datapath:dt|decod7segJogo:muxDEC1" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 160
+Info (12128): Elaborating entity "comparador" for hierarchy "Datapath:dt|comparador:muxCOM" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 162
+Info (12128): Elaborating entity "contador" for hierarchy "Datapath:dt|contador:contPont" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at contador.vhd(19): signal "contAux" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 19
+Warning (10492): VHDL Process Statement warning at contador.vhd(20): signal "contAux" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 20
+Warning (10631): VHDL Process Statement warning at contador.vhd(14): inferring latch(es) for signal or variable "cont", which holds its previous value in one or more paths through the process File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 14
+Warning (10631): VHDL Process Statement warning at contador.vhd(14): inferring latch(es) for signal or variable "contAux", which holds its previous value in one or more paths through the process File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 14
+Info (10041): Inferred latch for "contAux[0]" at contador.vhd(14) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 14
+Info (10041): Inferred latch for "contAux[1]" at contador.vhd(14) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 14
+Info (10041): Inferred latch for "contAux[2]" at contador.vhd(14) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 14
+Info (10041): Inferred latch for "contAux[3]" at contador.vhd(14) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 14
+Info (10041): Inferred latch for "cont[0]" at contador.vhd(14) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 14
+Info (10041): Inferred latch for "cont[1]" at contador.vhd(14) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 14
+Info (10041): Inferred latch for "cont[2]" at contador.vhd(14) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 14
+Info (10041): Inferred latch for "cont[3]" at contador.vhd(14) File: /home/pet/Desktop/drive-download-20171121T155723Z-001/contador.vhd Line: 14
+Info (12128): Elaborating entity "decod7segLEDR" for hierarchy "Datapath:dt|decod7segLEDR:dec7LEDR" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 164
+Info (12128): Elaborating entity "deslocaE" for hierarchy "Datapath:dt|deslocaE:deslE" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 165
+Info (12128): Elaborating entity "multiplicador" for hierarchy "Datapath:dt|multiplicador:multiScore" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 166
+Info (12128): Elaborating entity "decod7segResult" for hierarchy "Datapath:dt|decod7segResult:dec71" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/Datapath.vhd Line: 167
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer Datapath:dt|mux:muxVeloc|S File: /home/pet/Desktop/drive-download-20171121T155723Z-001/mux.vhd Line: 7
+    Warning (19017): Found clock multiplexer Datapath:dt|mux:muxVeloc|S~0 File: /home/pet/Desktop/drive-download-20171121T155723Z-001/mux.vhd Line: 7
+    Warning (19017): Found clock multiplexer Datapath:dt|mux:muxVeloc|S~1 File: /home/pet/Desktop/drive-download-20171121T155723Z-001/mux.vhd Line: 7
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 9
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 9
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 10
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 13
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 14
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 14
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 14
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 14
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 14
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 14
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 14
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 6
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/pet/Desktop/drive-download-20171121T155723Z-001/TopoJogo.vhd Line: 6
+Info (21057): Implemented 135 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 67 logic cells
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
+    Info: Peak virtual memory: 1038 megabytes
+    Info: Processing ended: Thu Nov 23 21:17:43 2017
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:44
+
+

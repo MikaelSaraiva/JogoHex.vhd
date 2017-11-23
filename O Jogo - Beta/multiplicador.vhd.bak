@@ -1,0 +1,17 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+
+entity multiplicador is
+port (inputCont: in std_logic_vector(9 downto 0);
+		inputDE: in std_logic_vector(7 downto 0);
+		S: out std_logic_vector(15 downto 0)
+);
+end multiplicador;
+
+architecture arqMultiplicador of multiplicador is
+	begin
+	
+		S <= inputCont * inputDE;
+		
+end arqMultiplicador;
