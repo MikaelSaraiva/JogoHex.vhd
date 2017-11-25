@@ -18,6 +18,7 @@ begin
 			elsif (enable = '1') then
 				contAux <= contAux + '1';
 				cont <= contAux;
+				
 			end if;
 		end process;
 end arqContador;

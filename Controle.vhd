@@ -2,9 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity Controle is port (
-	enable,clock, reset: in std_logic;
-	SW: in std_logic_vector(9 downto 0);
-	S: out std_logic	
+	enable,clock, reset, dez: in std_logic;
+	S, mostreResult: out std_logic	
 	);
 end Controle;
 
@@ -24,16 +23,20 @@ begin
 	process(EAtual)
 	begin
 		case EAtual is
-			when S0 =>	S <= '0'
-						PEStado <= S1;	
+			when S0 =>	S <= '0';
+							PEStado <= S1;	
 						
-			when S1 =>  
-						S <= 1;
-						PEstado <= S2;
+			when S1 => 	S <= '1';
+							PEstado <= S2;
 						
-			when S2 => 	
-						
-			when S3 => PEStado <= S0;
+			when S2 => 
+							if (dez = '1') then
+								PEstado <= S3;
+							else
+								PEstado <= S2;
+							end if;	
+			when S3 =>	mostreResult <= '1';
+							PEStado <= S0;
 		end case;
 	end process;
 end fsm1arq;

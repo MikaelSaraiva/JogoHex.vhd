@@ -11,11 +11,8 @@ end muxRom;
 architecture circuitoMuxRom of muxRom is
 
 begin
-		
-	S <= A when sel = "00" else
-			B when sel = "01" else
-			C when sel = "10" else
-			D;
-	
-
+		S <= A when sel = "00" else
+				B when sel = "01" else
+				C when sel = "10" else
+				D;
 end circuitoMuxRom;

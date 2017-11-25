@@ -5,6 +5,7 @@ use IEEE.std_logic_unsigned.all;
 
 entity contadorRom is port (
 	clock, reset, enable: in std_logic;
+	dez: out std_logic;
 	cont: out std_logic_vector(3 downto 0));
 end contadorRom;
 
@@ -18,6 +19,9 @@ begin
 			elsif (clock'event AND clock = '1') then
 				contAux <= contAux + '1';
 				cont <= contAux;
+				if (contAux = "1010") then
+					dez <= '1';
+				end if;
 			end if;
 		end process;
 end arqContadorRom;
