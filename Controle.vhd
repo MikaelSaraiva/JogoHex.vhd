@@ -27,15 +27,18 @@ begin
 							PEStado <= S1;	
 						
 			when S1 => 	S <= '0';
+
+							mostreResult <= '0';
 							PEstado <= S2;
 						
 			when S2 => 
 							if (dez = '1') then
 								PEstado <= S3;
-							else
+							elsif (dez = '0') then
 								PEstado <= S2;
 							end if;	
 			when S3 =>	mostreResult <= '1';
+							S <= '0';
 							PEStado <= S0;
 		end case;
 	end process;
