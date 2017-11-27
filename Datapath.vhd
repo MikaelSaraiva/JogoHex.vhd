@@ -24,8 +24,8 @@ architecture arqdtp of Datapath is
 signal muxCont, veloc1, veloc2, veloc3, veloc4, compCont: std_logic;
 signal regSelec, regSel: std_logic_vector(1 downto 0);
 signal contROM, R: std_logic_vector(3 downto 0);
-signal romMux1, romMux2, romMux3, romMux4, muxCOMP, deslMulti, result: std_logic_vector(7 downto 0);
-signal resultDec: std_logic_vector(11 downto 0);
+signal romMux1, romMux2, romMux3, romMux4, muxCOMP, deslMulti: std_logic_vector(7 downto 0);
+signal resultDec, result: std_logic_vector(11 downto 0);
 
 --Declaraçao de componentes
 
@@ -133,7 +133,8 @@ port (C: in std_logic_vector(3 downto 0);
 end component;
 
 component decod7segLEDR is
-port (C: in std_logic_vector(3 downto 0);
+port (enable: in std_logic;
+		C: in std_logic_vector(3 downto 0);
 		F: out std_logic_vector(9 downto 0)
 );
 end component;
@@ -147,7 +148,7 @@ end component;
 component registradorResult is
 port (reset, enable, clock: in std_logic;
 		inputScore: in std_logic_vector(11 downto 0);
-		S: out std_logic_vector(7 downto 0)
+		S: out std_logic_vector(11 downto 0)
 );
 end component;
 
@@ -175,10 +176,10 @@ begin
 	muxDEC2: decod7segJogo port map(muxComp(3 downto 0), HEX0);
 	muxCOM: comparador port map(muxCOMP, SW(7 downto 0), compCont);
 	contPont: contador port map(reset, compCont, R);
-	dec7LEDR: decod7segLEDR port map(R, LEDR);
+	dec7LEDR: decod7segLEDR port map(enable, R, LEDR);
 	deslE: deslocaE port map(SW(9 downto 8), deslMulti);
 	multiScore: multiplicador port map(R, deslMulti,resultDec);
-	regResult: registradorResult port map(reset, enableResult, clock, resultDec, result(7 downto 0));
+	regResult: registradorResult port map(reset, enableResult, clock, resultDec, result(11 downto 0));
 	dec71: decod7segResult port map(result(7 downto 4), HEX2);
 	dec72: decod7segResult port map(result(3 downto 0), HEX3);
 

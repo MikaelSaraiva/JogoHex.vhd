@@ -15,7 +15,7 @@ begin
 		begin
 			if (reset = '0') then
 				cont <= "0000";
-			elsif (enable = '1') then
+			elsif (enable = '0') then
 				contAux <= contAux + '1';
 				cont <= contAux;
 				
