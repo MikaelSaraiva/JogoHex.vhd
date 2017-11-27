@@ -23,10 +23,10 @@ begin
 	process(EAtual)
 	begin
 		case EAtual is
-			when S0 =>	S <= '0';
+			when S0 =>	S <= '1';
 							PEStado <= S1;	
 						
-			when S1 => 	S <= '1';
+			when S1 => 	S <= '0';
 							PEstado <= S2;
 						
 			when S2 => 

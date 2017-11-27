@@ -16,7 +16,7 @@ begin
 		begin
 			if (reset = '0') then
 				cont <= "0000";
-			elsif (clock'event AND clock = '1') then
+			elsif (clock'event AND clock = '1' AND enable = '0') then
 				contAux <= contAux + '1';
 				cont <= contAux;
 				if (contAux = "1010") then

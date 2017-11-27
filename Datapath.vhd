@@ -100,7 +100,7 @@ component contador is
 end component;
 
 component muxRom is
-	port (A, B, C, D: in std_logic_vector(7 downto 0);
+	port (A, B, C, D: in std_logic_vector(7 downto 0);	
 			sel: in std_logic_vector(1 downto 0);
 			S: out std_logic_vector(7 downto 0)
 );
