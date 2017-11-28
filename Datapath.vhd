@@ -89,13 +89,13 @@ component ROM3 is
 end component;
 
 component contadorRom is 
-	port (clock, reset, enable: in std_logic;
+	port (reset, enable: in std_logic;
 			dez: out std_logic;
 			cont: out std_logic_vector(3 downto 0));
 end component;
 
 component contador is 
-	port (reset, enable: in std_logic;
+	port (clock, reset, enable: in std_logic;
 			cont: out std_logic_vector(3 downto 0));
 end component;
 
@@ -165,7 +165,7 @@ begin
 	muxVeloc: mux port map(veloc1, veloc2, veloc3, veloc4,regSelec, muxCont);
 	dec7veloc: decod7seg port map(regSelec, HEX4);
 	HEX5 <= "1000111";
-	contR: contadorRom port map(muxCont, reset, enable, dez, contROM);
+	contR: contadorRom port map(reset, compCont, dez,contROM );
 	mor1: ROM port map(contROM, romMux1);
 	mor2: ROM1 port map(contROM, romMux2);
 	mor3: ROM2 port map(contROM, romMux3);
@@ -175,8 +175,8 @@ begin
 	muxDEC1: decod7segJogo port map(muxComp(7 downto 4), HEX1);
 	muxDEC2: decod7segJogo port map(muxComp(3 downto 0), HEX0);
 	muxCOM: comparador port map(muxCOMP, SW(7 downto 0), compCont);
-	contPont: contador port map(reset, compCont, R);
-	dec7LEDR: decod7segLEDR port map(enable, R, LEDR);
+	contPont: contador port map(muxCont, reset, enable, R);
+	dec7LEDR: decod7segLEDR port map(enableResult, R, LEDR);
 	deslE: deslocaE port map(SW(9 downto 8), deslMulti);
 	multiScore: multiplicador port map(R, deslMulti,resultDec);
 	regResult: registradorResult port map(reset, enableResult, clock, resultDec, result(11 downto 0));

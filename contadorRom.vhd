@@ -12,11 +12,11 @@ end contadorRom;
 architecture arqContadorRom of contadorRom is
 signal contAux: std_logic_vector(3 downto 0);
 begin
-	process(clock,reset)
+	process(reset, enable)
 		begin
 			if (reset = '0') then
 				cont <= "0000";
-			elsif (clock'event AND clock = '1' AND enable = '0') then
+			elsif (enable = '0') then
 				contAux <= contAux + '1';
 				cont <= contAux;
 				if (contAux = "1010") then

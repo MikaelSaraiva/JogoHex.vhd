@@ -3,7 +3,7 @@ use IEEE.Std_Logic_1164.all;
 entity registradorResult is
 port (reset, enable, clock: in std_logic;
 		inputScore: in std_logic_vector(11 downto 0);
-		S: out std_logic_vector(7 downto 0)
+		S: out std_logic_vector(11 downto 0)
 );
 end registradorResult;
 
@@ -12,9 +12,11 @@ begin
 	process(clock,reset)
 		begin
 			if (reset = '0') then
-				S <= "00000000";
-			elsif (clock'event AND clock = '1' AND enable = '0') then
-				S <= inputScore(7 downto 0);
+				S <= "000000000000";
+			elsif (clock'event AND clock = '1') then
+				if (enable = '0') then
+					S <= inputScore(11 downto 0);
+				end if;
 			end if;
 	end process;
 

@@ -39,7 +39,7 @@ end component;
 component Controle is port (
 	enable,clock, reset: in std_logic;
 	dez: in std_logic;
-	S, mostreResult: out std_logic
+	ativaRegRegDecodCont, mostreResult: out std_logic
 
 	);
 end component;

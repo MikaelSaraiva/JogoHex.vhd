@@ -13,7 +13,7 @@ architecture arqDecodLEDR of decod7segLEDR is
 begin
 	process(enable)
 	begin
-	if(enable = '0') then
+	if(enable = '1') then
 		F <= "0000000000";
 	else	
 		 	 if (C = "0000") then

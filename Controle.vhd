@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity Controle is port (
 	enable,clock, reset, dez: in std_logic;
-	S, mostreResult: out std_logic	
+	ativaRegRegDecodCont, mostreResult: out std_logic	
 	);
 end Controle;
 
@@ -16,30 +16,43 @@ begin
 		begin
 			if (reset = '0') then
 		EAtual <= S0;
-			elsif (clock'event AND clock = '1' AND enable = '0') then
+			elsif (clock'event AND clock = '1' ) then
 		EAtual <= PEstado;
 			end if;
 		end process;
 	process(EAtual)
 	begin
 		case EAtual is
-			when S0 =>	S <= '1';
-							PEStado <= S1;	
+			when S0 =>	ativaRegRegDecodCont <= '1';
+							mostreResult <= '1';
+							if (enable = '0') then
+								PEStado <= S1;	
+							else
+								PEstado <= S0;
+							end if;
+			when S1 => 	ativaRegRegDecodCont <= '0';
+							mostreResult <= '1';
+							if (enable = '0') then
+								PEStado <= S2;	
+							else
+								PEstado <= S1;
+							end if;
 						
-			when S1 => 	S <= '0';
-
+			when S2 => ativaRegRegDecodCont <= '1';
 							mostreResult <= '0';
-							PEstado <= S2;
-						
-			when S2 => 
+							
 							if (dez = '1') then
 								PEstado <= S3;
 							elsif (dez = '0') then
 								PEstado <= S2;
 							end if;	
-			when S3 =>	mostreResult <= '1';
-							S <= '0';
-							PEStado <= S0;
+			when S3 =>	ativaRegRegDecodCont <= '1';
+							mostreResult <= '0';
+							if (enable = '0') then
+								PEStado <= S1;	
+							else
+								PEstado <= S3;
+							end if;
 		end case;
 	end process;
 end fsm1arq;
