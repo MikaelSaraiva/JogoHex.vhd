@@ -14,21 +14,20 @@ signal contAux: std_logic_vector(3 downto 0);
 begin
 	process(reset, clock)
 		begin
-			if (reset = '0') then
-				cont <= "0000";
-				dez <= '0';
+			if (reset = '1') then
 				contAux <= "0000";
+				dez <= '0';
 			elsif (clock'event AND clock = '1') then
 				if (ligaCont = '1') then
 					contAux <= contAux + '1';
-					cont <= contAux + '1';
-					dez <= '0';
-					if (contAux = "1010") then
-						dez <= '1';
+					if (contAux = "1001") then 
+						dez <= '1';	
 						contAux <= "0000";
-						cont <= "0000";
+					else 
+						dez <= '0';	
 					end if;
 				end if;
 			end if;
 		end process;
+		cont <= contAux;
 end arqContadorRom;

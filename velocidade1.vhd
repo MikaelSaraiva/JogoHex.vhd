@@ -10,14 +10,15 @@ end velocidade1;
 	
 architecture arqVelocidade of velocidade1 is
 signal clk:std_logic;
-signal cont: std_logic_vector(27 downto 0);  
+signal cont: std_logic_vector(3 downto 0);  
 begin
+	cont <= "0000";
 	process(CLOCK_50)
 	begin
 			if(rising_edge(CLOCK_50)) then
 				cont <= cont + 1;
-				if (cont= x"BEBC1FC") then
-					cont <= x"0000000";
+				if (cont= "0010") then --BEBC1FC
+					cont <= "0000";
 					clk <= '1';
 				else
 					clk <= '0';

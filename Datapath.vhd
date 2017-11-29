@@ -6,7 +6,7 @@ entity Datapath is
 	port (
 		SW: in std_logic_vector(9 downto 0);
 		enableResult, ativaDeMux1: in std_logic;
-		clock, reset, enable, ativaCont: in std_logic;
+		clock, reset, enable, ativaCont, cont_clock, ativa_clock: in std_logic;
 		dez: out std_logic;
 		LEDR: out std_logic_vector(9 downto 0);
 		HEX0:out std_logic_vector(6 downto 0);
@@ -21,12 +21,11 @@ end Datapath;
 
 
 architecture arqdtp of Datapath is
-signal muxCont, veloc1, veloc2, veloc3, veloc4, compCont: std_logic;
+signal muxCont, veloc1, veloc2, veloc3, veloc4, compCont,CLK1, CLK2, CLK3, CLK4: std_logic;
 signal regSelec, regSel: std_logic_vector(1 downto 0);
 signal contROM, R: std_logic_vector(3 downto 0);
 signal romMux1, romMux2, romMux3, romMux4, muxCOMP, deslMulti, demDEC: std_logic_vector(7 downto 0);
 signal resultDec, result: std_logic_vector(11 downto 0);
-
 --Declaraçao de componentes
 
 component deslocaE is
@@ -152,6 +151,13 @@ port (reset, enable, clock: in std_logic;
 );
 end component;
 
+component FSM_Clock is
+port(
+		Clock, Reset, Enable : in std_logic;
+		CLK1, CLK2, CLK3, CLK4 : out std_logic
+		);
+end component;
+
 --component demux is
 --port (enable, clock, reset: std_logic;
 --		A: in std_logic_vector(7 downto 0);
@@ -165,15 +171,16 @@ end component;
 begin
 	--HEX2 <= "1001111" when enable = '0';
 	--HEX3 <= "1000000" when enable = '0';
-	velocMux1: velocidade port map(clock, veloc1);
-	velocMux2: velocidade1 port map(clock, veloc2);
-	velocMux3: velocidade2 port map(clock, veloc3);
-	velocMux4: velocidade3 port map(clock, veloc4);
+	clocks: FSM_Clock port map (clock, reset, ativa_clock, CLK1, CLK2, CLK3, CLK4);
+--	velocMux1: velocidade port map(clock, veloc1);
+--	velocMux2: velocidade1 port map(clock, veloc2);
+--	velocMux3: velocidade2 port map(clock, veloc3);
+--	velocMux4: velocidade3 port map(clock, veloc4);
 	regSel1: registrador port map(reset, enable, clock, SW(9 downto 8), regSelec);
-	muxVeloc: mux port map(veloc1, veloc2, veloc3, veloc4,regSelec, muxCont);
+	muxVeloc: mux port map(CLK1, CLK2, CLK3, CLK4,regSelec, muxCont);
 	dec7veloc: decod7seg port map(regSelec, HEX4);
 	HEX5 <= "1000111";
-	contR: contadorRom port map(muxCont, reset, ativaCont, dez,contROM );
+	contR: contadorRom port map(muxCont, cont_clock, ativaCont, dez,contROM );
 	mor1: ROM port map(contROM, romMux1);
 	mor2: ROM1 port map(contROM, romMux2);
 	mor3: ROM2 port map(contROM, romMux3);
