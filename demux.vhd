@@ -16,7 +16,7 @@ begin
 			begin
 				if (reset = '0') then
 					S <= "00000000";
-				elsif (clock'event AND clock = '1') then
+				elsif (clock'event AND clock = '1' AND enable = '0') then
 					if (enable = '0') then
 						S <= A;
 					else

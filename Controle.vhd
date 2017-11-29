@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity Controle is port (
 	enable,clock, reset, dez: in std_logic;
-	ativaRegRegDecodCont, mostreResult, ativaDeMux: out std_logic	
+	ativaRegRegDecodCont, mostreResult, ativaDeMux, ativaCont: out std_logic	
 	);
 end Controle;
 
@@ -16,7 +16,7 @@ begin
 		begin
 			if (reset = '0') then
 		EAtual <= S0;
-			elsif (clock'event AND clock = '1' ) then
+			elsif (clock'event AND clock = '1' AND enable = '0') then
 		EAtual <= PEstado;
 			end if;
 		end process;
@@ -31,6 +31,7 @@ begin
 								PEstado <= S0;
 							end if;
 			when S1 => 	ativaRegRegDecodCont <= '0';
+							ativaCont <= '0';
 							mostreResult <= '1';
 							ativaDeMux <= '1';
 							if (enable = '0') then
@@ -40,6 +41,7 @@ begin
 							end if;
 						
 			when S2 => ativaRegRegDecodCont <= '1';
+							ativaCont <= '1';
 							mostreResult <= '0';
 							ativaDeMux <= '0';							
 							if (dez = '1') then
