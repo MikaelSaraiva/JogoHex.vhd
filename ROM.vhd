@@ -2,11 +2,13 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity ROM is
-  port ( address : in std_logic_vector(3 downto 0);
+  port ( reset: in std_logic;
+			address : in std_logic_vector(3 downto 0);
          data : out std_logic_vector(7 downto 0) );
 end entity ROM;
 
 architecture arqROM of ROM is
+signal addressAux: std_logic_vector(3 downto 0);
   type mem is array (0 to 9) of std_logic_vector(7 downto 0);
   constant my_Rom : mem := (
 	0 => "00011000", -- 18
@@ -23,7 +25,7 @@ architecture arqROM of ROM is
 begin
    process (address)
    begin
-     case address is
+		case address is
        when "0000" => data <= my_rom(0);
        when "0001" => data <= my_rom(1);
        when "0010" => data <= my_rom(2);
