@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity Controle is port (
 	enable,clock, reset, dez: in std_logic;
-	ativaRegRegDecodCont, mostreResult: out std_logic	
+	ativaRegRegDecodCont, mostreResult, ativaDeMux: out std_logic	
 	);
 end Controle;
 
@@ -32,6 +32,7 @@ begin
 							end if;
 			when S1 => 	ativaRegRegDecodCont <= '0';
 							mostreResult <= '1';
+							ativaDeMux <= '1';
 							if (enable = '0') then
 								PEStado <= S2;	
 							else
@@ -40,7 +41,7 @@ begin
 						
 			when S2 => ativaRegRegDecodCont <= '1';
 							mostreResult <= '0';
-							
+							ativaDeMux <= '0';							
 							if (dez = '1') then
 								PEstado <= S3;
 							elsif (dez = '0') then

@@ -5,7 +5,7 @@ use ieee.std_logic_1164.all;
 entity Datapath is 
 	port (
 		SW: in std_logic_vector(9 downto 0);
-		enableResult: in std_logic;
+		enableResult, ativaDeMux1: in std_logic;
 		clock, reset, enable: in std_logic;
 		dez: out std_logic;
 		LEDR: out std_logic_vector(9 downto 0);
@@ -24,7 +24,7 @@ architecture arqdtp of Datapath is
 signal muxCont, veloc1, veloc2, veloc3, veloc4, compCont: std_logic;
 signal regSelec, regSel: std_logic_vector(1 downto 0);
 signal contROM, R: std_logic_vector(3 downto 0);
-signal romMux1, romMux2, romMux3, romMux4, muxCOMP, deslMulti: std_logic_vector(7 downto 0);
+signal romMux1, romMux2, romMux3, romMux4, muxCOMP, deslMulti, demDEC: std_logic_vector(7 downto 0);
 signal resultDec, result: std_logic_vector(11 downto 0);
 
 --Declaraçao de componentes
@@ -89,7 +89,7 @@ component ROM3 is
 end component;
 
 component contadorRom is 
-	port (reset, enable: in std_logic;
+	port (clock, reset, enable: in std_logic;
 			dez: out std_logic;
 			cont: out std_logic_vector(3 downto 0));
 end component;
@@ -152,6 +152,14 @@ port (reset, enable, clock: in std_logic;
 );
 end component;
 
+component demux is
+port (enable, clock, reset: std_logic;
+		A: in std_logic_vector(7 downto 0);
+		sel: in std_logic_vector(1 downto 0);
+		S: out std_logic_vector(7 downto 0)
+);
+end component;
+
 --Fim da declaraçao de componentes
 
 begin
@@ -165,17 +173,18 @@ begin
 	muxVeloc: mux port map(veloc1, veloc2, veloc3, veloc4,regSelec, muxCont);
 	dec7veloc: decod7seg port map(regSelec, HEX4);
 	HEX5 <= "1000111";
-	contR: contadorRom port map(reset, compCont, dez,contROM );
+	contR: contadorRom port map(muxCont, reset, compCont, dez,contROM );
 	mor1: ROM port map(contROM, romMux1);
 	mor2: ROM1 port map(contROM, romMux2);
 	mor3: ROM2 port map(contROM, romMux3);
 	mor4: ROM3 port map(contROM, romMux4);
 	regSel2: registrador port map(reset, enable, clock, SW(1 downto 0), regSel);
 	morM: muxRom port map(romMux1,romMux2, romMux3, romMux4, regSel, muxCOMP);
-	muxDEC1: decod7segJogo port map(muxComp(7 downto 4), HEX1);
-	muxDEC2: decod7segJogo port map(muxComp(3 downto 0), HEX0);
+	demuxDEC0: demux port map(ativaDeMux1, muxCont, reset, muxCOMP, regSel, demDEC);
+	muxDEC1: decod7segJogo port map(demDEC(7 downto 4), HEX1);
+	muxDEC2: decod7segJogo port map(demDEC(3 downto 0), HEX0);
 	muxCOM: comparador port map(muxCOMP, SW(7 downto 0), compCont);
-	contPont: contador port map(muxCont, reset, enable, R);
+	contPont: contador port map(muxCont, reset, compCont, R);
 	dec7LEDR: decod7segLEDR port map(enableResult, R, LEDR);
 	deslE: deslocaE port map(SW(9 downto 8), deslMulti);
 	multiScore: multiplicador port map(R, deslMulti,resultDec);
