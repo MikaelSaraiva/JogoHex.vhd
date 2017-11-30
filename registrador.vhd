@@ -14,7 +14,7 @@ begin
 			if (reset = '0') then
 				S <= "00";
 			elsif (clock'event AND clock = '1' ) then
-				if( enable = '0') then
+				if( enable = '1') then
 					S <= sel;
 				end if;
 			end if;
