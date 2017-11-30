@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity Controle is port (
 	enable,clock, reset, dez: in std_logic;
-	ativa_reg1, ativa_reg2, ativa_reg3, ativa_Result, ativa_Cont, ativa_clock, ativa_s0, ativa_muxDec01, ativa_muxDec23, ativa_muxDec45: out std_logic	
+	ativa_reg1, ativa_reg2, ativa_reg3, ativa_Result, ativa_LEDR, ativa_Cont, ativa_clock, ativa_s0, ativa_muxDec01, ativa_muxDec23, ativa_muxDec45: out std_logic	
 	);
 end Controle;
 
@@ -25,12 +25,13 @@ begin
 		case EAtual is
 			when S0 =>	ativa_reg1		<= '0'; 
 							ativa_reg2		<= '0'; 
-							ativa_reg3 		<= '1'; 
+							ativa_reg3 		<= '0'; 
 							ativa_Result 	<= '0';
+							ativa_LEDR		<= '0';
 							ativa_Cont 		<= '0';
 							ativa_clock 	<= '0';
 							ativa_s0			<= '0';
-							ativa_muxDec01	<= '1';
+							ativa_muxDec01	<= '0';
 							ativa_muxDec23	<= '1';
 							ativa_muxDec45	<= '1';
 							
@@ -43,6 +44,7 @@ begin
 							ativa_reg2		<= '1';
 							ativa_reg3 		<= '1';
 							ativa_Result 	<= '0';
+							ativa_LEDR		<= '0';
 							ativa_Cont 		<= '0';
 							ativa_clock		<= '0';
 							ativa_s0			<= '0';
@@ -60,6 +62,7 @@ begin
 							ativa_reg2		<= '0';
 							ativa_reg3 		<= '1';
 							ativa_Result 	<= '0';
+							ativa_LEDR		<= '1';
 							ativa_Cont 		<= '1';
 							ativa_clock 	<= '1';
 							ativa_s0			<= '0';
@@ -77,10 +80,11 @@ begin
 							ativa_reg2		<= '0';
 							ativa_reg3 		<= '0';
 							ativa_Result 	<= '1';
+							ativa_LEDR		<= '1';
 							ativa_Cont 		<= '0';
 							ativa_clock 	<= '0';
 							ativa_s0	    	<= '0';
-							ativa_muxDec01	<= '1';
+							ativa_muxDec01	<= '0';
 							ativa_muxDec23	<= '0';
 							ativa_muxDec45	<= '1';
 

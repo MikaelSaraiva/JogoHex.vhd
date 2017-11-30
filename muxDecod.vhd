@@ -14,6 +14,10 @@ architecture circuitoMuxDecod of muxDecod is
 begin
 	
 	S <=  A when sel = '0' else
-			"00000" & B;
+			"1000000" when B = "00" else
+			"1111001" when B = "01" else
+			"0100100" when B = "10" else
+			"0110000";
+
 	
 end circuitoMuxDecod;
