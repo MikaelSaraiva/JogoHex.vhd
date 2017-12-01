@@ -6,7 +6,7 @@ entity Datapath is
 	port (
 		SW: in std_logic_vector(9 downto 0);
 		ativa_Result, ativa_LEDR: in std_logic;
-		clock, reset,	ativa_reg1, ativa_reg2, ativa_reg3, ativa_Cont, ativa_clock, ativa_muxDec01, ativa_muxDec23, ativa_muxDec45: in std_logic;
+		clock, reset,	ativa_reg1, ativa_reg2, ativa_reg3, ativa_Cont, ativa_clock, ativa_muxDec01, ativa_muxDec23, ativa_muxDec45, ativa_muxMux01, ativa_muxMuxMux01: in std_logic;
 		dez, ativa_s0: out std_logic;
 		LEDR: out std_logic_vector(9 downto 0);
 		HEX0:out std_logic_vector(6 downto 0);
@@ -28,7 +28,7 @@ signal regSelec, regSel: std_logic_vector(1 downto 0);
 signal contROM, R, S, P: std_logic_vector(3 downto 0);
 signal romMux1, romMux2, romMux3, romMux4, muxCOMP, deslMulti, demDEC, SP: std_logic_vector(7 downto 0);
 signal resultDec, result: std_logic_vector(11 downto 0);
-signal muxD0, muxD1, muxD2, muxD3, muxD4, muxD5: std_logic_vector(6 downto 0);
+signal muxD0, muxD1, muxD2, muxD3, muxD4, muxD5, muxMux0, muxMux1, muxMuxMux0, muxMuxMux1: std_logic_vector(6 downto 0);
 ---------------------------------------------------------------------------------------------------
 
 
@@ -232,11 +232,16 @@ begin
 	dec71: decod7segResult port map(result(7 downto 4), muxD2);
 	dec72: decod7segResult port map(result(3 downto 0), muxD3);
 	regJogoDec: registradorJogoDec port map(reset, ativa_reg3, muxCont, SW(1 downto 0), muxCOMP, S, P, SP); 
-	muxDec0:  muxDecod port map(muxD0, SW(1 downto 0), ativa_muxDec01, HEX0);
-	muxDeco1: muxDecod port map(muxD1, SW(1 downto 0), ativa_muxDec01, HEX1);
+	muxDec0:  muxDecod port map(muxD0, SW(1 downto 0), ativa_muxDec01, muxMux0);
+	muxDeco1: muxDecodG port map(muxD1, "1111111", ativa_muxDec01, muxMux1);
 	muxDeco2: muxDecodG port map(muxD2, "1111111", ativa_muxDec23, HEX2);
 	muxDeco3: muxDecodG port map(muxD3, "1111111", ativa_muxDec23, HEX3);
 	muxDeco4: muxDecodG port map(muxD4, "1111111", ativa_muxDec45, HEX4);
 	muxDeco5: muxDecodG port map(muxD5, "1111111", ativa_muxDec45, HEX5);
+	muxMux00: muxDecodG port map(muxMux0, "1111111", ativa_muxMux01, muxMuxMux0);
+	muxMux11: muxDecodG port map(muxMux1, "1111111", ativa_muxMux01, muxMuxmux1);
+	muxMuxMux00: muxDecodG port map(muxMuxMux0, "1001111", ativa_muxMuxMux01, HEX0);
+	muxMuxMux11: muxDecodG port map(muxMuxmux1, "1000000", ativa_muxMuxMux01, HEX1);
+
 	
 end arqdtp;

@@ -13,12 +13,12 @@ signal contAux: std_logic_vector(3 downto 0);
 begin
 	process(clock,reset)
 		begin
-			if (reset = '0') then
+			if (reset = '1') then
 				contAux <= "0000";
 			elsif (clock'event AND clock = '1') then
 				if (enable = '1') then
 						contAux <= contAux + '1';
-						if (contAux = "1010") then
+						if (contAux = "1001") then
 							contAux <= "0000";
 						end if;
 				end if;

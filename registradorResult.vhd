@@ -11,7 +11,7 @@ architecture circuitoRegistradorResult of registradorResult is
 begin
 	process(clock,reset)
 		begin
-			if (reset = '0') then -- teste revertido sinal
+			if (reset = '1') then -- teste revertido sinal
 				S <= "000000000000";
 			elsif (clock'event AND clock = '1') then
 				if (enable = '1') then

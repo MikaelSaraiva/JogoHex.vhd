@@ -11,7 +11,7 @@ architecture circuitoRegistrador of registrador is
 begin
 	process(clock,reset)
 		begin
-			if (reset = '0') then
+			if (reset = '1') then
 				S <= "00";
 			elsif (clock'event AND clock = '1' ) then
 				if( enable = '1') then

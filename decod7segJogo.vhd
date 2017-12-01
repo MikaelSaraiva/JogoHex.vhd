@@ -23,7 +23,7 @@ begin
 			"0000011" when C = "1011" else
 			"1000110" when C = "1100" else
 			"0100001" when C = "1101" else
-			"0001100" when C = "1110" else
+			"0000110" when C = "1110" else --0001100
 			"0001110";
 											
 end arqDecodJogo;

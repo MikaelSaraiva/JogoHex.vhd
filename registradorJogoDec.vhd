@@ -14,7 +14,7 @@ architecture circuitoRegistradorJogoDec of registradorJogoDec is
 begin
 	process(clock,reset)
 		begin
-			if (reset = '0') then 
+			if (reset = '1') then 
 				S <= "0000";
 				P <= "0000";
 				SP <= "00000000";

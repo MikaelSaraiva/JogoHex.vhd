@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity Controle is port (
 	enable,clock, reset, dez: in std_logic;
-	ativa_reg1, ativa_reg2, ativa_reg3, ativa_Result, ativa_LEDR, ativa_Cont, ativa_clock, ativa_s0, ativa_muxDec01, ativa_muxDec23, ativa_muxDec45: out std_logic	
+	ativa_reg1, ativa_reg2, ativa_reg3, ativa_Result, ativa_LEDR, ativa_Cont, ativa_clock, ativa_s0, ativa_muxDec01, ativa_muxDec23, ativa_muxDec45, ativa_reset, ativa_muxMux01, ativa_muxMuxMux01: out std_logic	
 	);
 end Controle;
 
@@ -27,13 +27,15 @@ begin
 							ativa_reg2		<= '0'; 
 							ativa_reg3 		<= '0'; 
 							ativa_Result 	<= '0';
-							ativa_LEDR		<= '0';
+							ativa_LEDR		<= '1';
 							ativa_Cont 		<= '0';
 							ativa_clock 	<= '0';
 							ativa_s0			<= '0';
 							ativa_muxDec01	<= '0';
 							ativa_muxDec23	<= '1';
 							ativa_muxDec45	<= '1';
+							ativa_reset 	<= '1';
+							ativa_muxMux01 <= '1';
 							
 							if (enable = '0') then
 								PEStado <= S1;	
@@ -44,13 +46,15 @@ begin
 							ativa_reg2		<= '1';
 							ativa_reg3 		<= '1';
 							ativa_Result 	<= '0';
-							ativa_LEDR		<= '0';
+							ativa_LEDR		<= '1';
 							ativa_Cont 		<= '0';
 							ativa_clock		<= '0';
 							ativa_s0			<= '0';
 							ativa_muxDec01	<= '1';
 							ativa_muxDec23	<= '1';
 							ativa_muxDec45	<= '0';
+							ativa_reset 	<= '0';
+							ativa_muxMux01 <= '0';
 							
 							if (enable = '0') then
 								PEStado <= S2;	
@@ -69,6 +73,8 @@ begin
 							ativa_muxDec01	<= '0';
 							ativa_muxDec23	<= '1';
 							ativa_muxDec45	<= '0';
+							ativa_reset 	<= '0';
+							ativa_muxMux01 <= '0';
 
 							
 							if (dez = '1') then
@@ -87,6 +93,8 @@ begin
 							ativa_muxDec01	<= '0';
 							ativa_muxDec23	<= '0';
 							ativa_muxDec45	<= '1';
+							ativa_reset 	<= '0';
+							ativa_muxMux01 <= '0';
 
 							if (enable = '0') then
 								PEStado <= S0;	

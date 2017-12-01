@@ -14,7 +14,7 @@ signal contAux: std_logic_vector(3 downto 0);
 begin
 	process(reset, clock)
 		begin
-			if (reset = '0') then
+			if (reset = '1') then
 				contAux <= "0000";
 				dez <= '0';
 			elsif (clock'event AND clock = '1') then

@@ -16,7 +16,7 @@ signal CONT1, CONT2, CONT3, CONT4: integer := 0;
 	process (Clock, Enable, Reset)
 	
 	begin
-		if Reset = '0' then
+		if Reset = '1' then
 			CONT1 <= 0;
 			CONT2 <= 0;
 			CONT3 <= 0;

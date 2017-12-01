@@ -14,8 +14,6 @@ begin
 	process(enable)
 	begin
 	if(enable = '1' ) then
-		F <= "0000000000";
-	else	
 		 	 if (C = "0000") then
 					F <="0000000000";
 			 elsif(C = "0001") then
