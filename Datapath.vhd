@@ -24,7 +24,7 @@ architecture arqdtp of Datapath is
 
 ---------------------------------------------------------------------------------------------
 signal muxCont, veloc1, veloc2, veloc3, veloc4, compCont,CLK1, CLK2, CLK3, CLK4: std_logic;
-signal regSelec, regSel: std_logic_vector(1 downto 0);
+signal regSelec, regSel, regMulti: std_logic_vector(1 downto 0);
 signal contROM, R, S, P: std_logic_vector(3 downto 0);
 signal romMux1, romMux2, romMux3, romMux4, muxCOMP, deslMulti, demDEC, SP: std_logic_vector(7 downto 0);
 signal resultDec, result: std_logic_vector(11 downto 0);
@@ -50,7 +50,7 @@ port (CLOCK_50: in std_logic;
 	S: out std_logic);
 end component; 
 	
-	component velocidade2 is
+component velocidade2 is
 port (CLOCK_50: in std_logic;
 	S: out std_logic);
 end component;
@@ -138,7 +138,7 @@ port (C: in std_logic_vector(3 downto 0);
 end component;
 
 component decod7segLEDR is
-port (enable: in std_logic;
+port (reset, enable, clock: in std_logic;
 		C: in std_logic_vector(3 downto 0);
 		F: out std_logic_vector(9 downto 0)
 );
@@ -191,24 +191,14 @@ port (A: in std_logic_vector(6 downto 0);
 );
 end component;
 
---component demux is
---port (enable, clock, reset: std_logic;
---		A: in std_logic_vector(7 downto 0)reset;
---		sel: in std_logic_vector(1 downto 0);
---		S: out std_logic_vector(7 downto 0)
---);
---end component;
+
+
 
 --Fim da declaraçao de componentes
 
 begin
-	--HEX2 <= "1001111" when enable = '0';
-	--HEX3 <= "1000000" when enable = '0';
+
 	clocks: FSM_Clock port map (clock, reset, ativa_clock , CLK1, CLK2, CLK3, CLK4);
---	velocMux1: velocidade port map(clock, veloc1);
---	velocMux2: velocidade1 port map(clock, veloc2);
---	velocMux3: velocidade2 port map(clock, veloc3);
---	velocMux4: velocidade3 port map(clock, veloc4);
 	regSel1: registrador port map(reset, ativa_reg1, clock, SW(9 downto 8), regSelec);
 	muxVeloc: mux port map(CLK1, CLK2, CLK3, CLK4,regSelec, muxCont);
 	dec7veloc: decod7seg port map(regSelec, muxD4);
@@ -220,17 +210,16 @@ begin
 	mor4: ROM3 port map(contROM, romMux4);
 	regSel2: registrador port map(reset, ativa_reg2, clock, SW(1 downto 0), regSel);
 	morM: muxRom port map(romMux1,romMux2, romMux3, romMux4, regSel, muxCOMP);
---	demuxDEC0: demux port map(ativaDeMux1, muxCont, reset, muxCOMP, regSel, demDEC);
 	muxDEC1: decod7segJogo port map(P, muxD1);
 	muxDEC2: decod7segJogo port map(S, muxD0);
 	muxCOM: comparador port map(SP, SW(7 downto 0), compCont);
 	contPont: contador port map(muxCont, reset, compCont, R);
-	dec7LEDR: decod7segLEDR port map(ativa_LEDR, R, LEDR);
-	deslE: deslocaE port map(SW(9 downto 8), deslMulti);
+	dec7LEDR: decod7segLEDR port map(reset, ativa_LEDR, clock, R, LEDR);
+	deslE: deslocaE port map(regMulti, deslMulti);
 	multiScore: multiplicador port map(R, deslMulti,resultDec);
 	regResult: registradorResult port map(reset, ativa_Result, clock, resultDec, result(11 downto 0));
-	dec71: decod7segResult port map(result(7 downto 4), muxD2);
-	dec72: decod7segResult port map(result(3 downto 0), muxD3);
+	dec71: decod7segResult port map(result(3 downto 0), muxD2);
+	dec72: decod7segResult port map(result(7 downto 4), muxD3);
 	regJogoDec: registradorJogoDec port map(reset, ativa_reg3, muxCont, SW(1 downto 0), muxCOMP, S, P, SP); 
 	muxDec0:  muxDecod port map(muxD0, SW(1 downto 0), ativa_muxDec01, muxMux0);
 	muxDeco1: muxDecodG port map(muxD1, "1111111", ativa_muxDec01, muxMux1);
@@ -242,6 +231,6 @@ begin
 	muxMux11: muxDecodG port map(muxMux1, "1111111", ativa_muxMux01, muxMuxmux1);
 	muxMuxMux00: muxDecodG port map(muxMuxMux0, "1001111", ativa_muxMuxMux01, HEX0);
 	muxMuxMux11: muxDecodG port map(muxMuxmux1, "1000000", ativa_muxMuxMux01, HEX1);
-
-	
+	registradorMulti: registrador port map(reset, ativa_reg2, clock, SW(1 downto 0), regMulti);
+--	multCerto: multiplicadorCerto port map
 end arqdtp;

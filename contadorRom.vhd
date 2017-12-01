@@ -20,7 +20,7 @@ begin
 			elsif (clock'event AND clock = '1') then
 				if (ligaCont = '1') then
 					contAux <= contAux + '1';
-					if (contAux = "1001") then 
+					if (contAux = "1010") then 
 						dez <= '1';	
 						contAux <= "0000";
 					else 

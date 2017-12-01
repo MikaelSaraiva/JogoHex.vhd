@@ -27,7 +27,7 @@ begin
 							ativa_reg2		<= '0'; 
 							ativa_reg3 		<= '0'; 
 							ativa_Result 	<= '0';
-							ativa_LEDR		<= '1';
+							ativa_LEDR		<= '0';
 							ativa_Cont 		<= '0';
 							ativa_clock 	<= '0';
 							ativa_s0			<= '0';
@@ -36,6 +36,7 @@ begin
 							ativa_muxDec45	<= '1';
 							ativa_reset 	<= '1';
 							ativa_muxMux01 <= '1';
+							ativa_muxMuxMux01 <= '1';
 							
 							if (enable = '0') then
 								PEStado <= S1;	
@@ -46,7 +47,7 @@ begin
 							ativa_reg2		<= '1';
 							ativa_reg3 		<= '1';
 							ativa_Result 	<= '0';
-							ativa_LEDR		<= '1';
+							ativa_LEDR		<= '0';
 							ativa_Cont 		<= '0';
 							ativa_clock		<= '0';
 							ativa_s0			<= '0';
@@ -55,6 +56,7 @@ begin
 							ativa_muxDec45	<= '0';
 							ativa_reset 	<= '0';
 							ativa_muxMux01 <= '0';
+							ativa_muxMuxMux01 <= '0';
 							
 							if (enable = '0') then
 								PEStado <= S2;	
@@ -75,6 +77,7 @@ begin
 							ativa_muxDec45	<= '0';
 							ativa_reset 	<= '0';
 							ativa_muxMux01 <= '0';
+							ativa_muxMuxMux01 <= '0';
 
 							
 							if (dez = '1') then
@@ -86,7 +89,7 @@ begin
 							ativa_reg2		<= '0';
 							ativa_reg3 		<= '0';
 							ativa_Result 	<= '1';
-							ativa_LEDR		<= '1';
+							ativa_LEDR		<= '0';
 							ativa_Cont 		<= '0';
 							ativa_clock 	<= '0';
 							ativa_s0	    	<= '0';
@@ -94,7 +97,8 @@ begin
 							ativa_muxDec23	<= '0';
 							ativa_muxDec45	<= '1';
 							ativa_reset 	<= '0';
-							ativa_muxMux01 <= '0';
+							ativa_muxMux01 <= '1';
+							ativa_muxMuxMux01 <= '0';
 
 							if (enable = '0') then
 								PEStado <= S0;	

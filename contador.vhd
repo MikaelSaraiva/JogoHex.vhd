@@ -18,7 +18,7 @@ begin
 			elsif (clock'event AND clock = '1') then
 				if (enable = '1') then
 						contAux <= contAux + '1';
-						if (contAux = "1001") then
+						if (contAux = "1010") then
 							contAux <= "0000";
 						end if;
 				end if;
